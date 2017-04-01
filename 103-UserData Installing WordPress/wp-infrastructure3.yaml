@@ -74,6 +74,9 @@ Resources:
       ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", AMALINUX] # Dynamic mapping + Pseudo Parameter
       InstanceType: !FindInMap [InstanceSize, !Ref EnvironmentSize, EC2]
       KeyName: AdvancedCFN
+      SecurityGroupIds:
+        - sg-1d21bd62
+        - sg-f4f6688b
       UserData:
         "Fn::Base64":
           !Sub |
